@@ -40,10 +40,17 @@ decisions about the work, and an unlabelled quiz question reads as one. Keep the
 topical, not numbered.
 
 **If Weak spots to revisit is not empty, exactly one question comes from it** instead of from
-today's work — the oldest unresolved item. One slot, however long that list is: it replaces a
-question about today's work rather than adding one, and a quiz that is mostly carry-back stops
-testing what was just built. A concept quizzed minutes after its own walkthrough is barely
-tested; this slot is the only thing that re-tests one, and without it nothing leaves the queue.
+today's work — the oldest unresolved item — and its text names what it carries back:
+
+```
+QUIZ QUESTION <n> — (carry-back, <date>: <concept>) …
+```
+
+Naming it forces a deliberate pick rather than a today's-work question that happens to graze an
+old topic, and it tells the learner this one came off the backlog. One slot, however long that
+list is: it replaces a question about today's work rather than adding one, and a quiz that is
+mostly carry-back stops testing what was just built. Without this slot nothing ever leaves the
+queue.
 
 **Distractor quality is the whole game.** Every wrong option is a misconception someone
 learning this stack would actually hold:
