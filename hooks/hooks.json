@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh \"${CLAUDE_PLUGIN_ROOT}/hooks/activate.sh\"",
+            "commandWindows": "$d=(Get-Location).Path; while ($d) { if (Test-Path (Join-Path $d 'LEARNING.md')) { \"Learning mode: LEARNING.md found at $d\\LEARNING.md.\"; \"Use the 'learning-mode' skill for every non-trivial change this session. Read the skill - do not work from this reminder.\"; break }; $p = Split-Path $d -Parent; if (-not $p -or $p -eq $d) { break }; $d = $p }",
+            "timeout": 5,
+            "statusMessage": "Checking for a learning log..."
+          }
+        ]
+      }
+    ]
+  }
+}
