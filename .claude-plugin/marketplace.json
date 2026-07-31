@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "learning-mode",
+  "description": "Learning mode for Claude Code: get taught the unfamiliar stack while the work gets done.",
+  "owner": {
+    "name": "Lander Parren",
+    "url": "https://github.com/Lander-Parren"
+  },
+  "plugins": [
+    {
+      "name": "learning-mode",
+      "description": "Teach the stack while building it: what & why up front, concept notes inline, a walkthrough and a real quiz after, results logged to LEARNING.md.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

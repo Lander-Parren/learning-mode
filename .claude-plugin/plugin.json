@@ -1,0 +1,13 @@
+{
+  "name": "learning-mode",
+  "version": "0.1.0",
+  "description": "Teach the stack while building it: what & why up front, concept notes inline, a walkthrough and a real quiz after, results logged to LEARNING.md.",
+  "author": {
+    "name": "Lander Parren",
+    "url": "https://github.com/Lander-Parren"
+  },
+  "homepage": "https://github.com/Lander-Parren/learning-mode",
+  "repository": "https://github.com/Lander-Parren/learning-mode",
+  "license": "MIT",
+  "keywords": ["learning", "teaching", "onboarding", "quiz", "mentoring"]
+}
