@@ -37,6 +37,11 @@ learn — then write the template below and continue.
 questions on one card. (No `AskUserQuestion` in your harness? Number them in prose and ask for
 all answers in one reply.)
 
+Every question text starts with `QUIZ QUESTION <n> — `. The same tool asks the learner to make
+real decisions about the work, and an unlabelled quiz question is easy to mistake for one.
+Keep the `header` chip topical (`Triggering`, `Profile`) rather than numbering it — it is
+capped at 12 characters and the prefix already carries the label.
+
 **Distractor quality is the whole game.** Every wrong option is a misconception someone
 learning this stack would actually hold:
 
