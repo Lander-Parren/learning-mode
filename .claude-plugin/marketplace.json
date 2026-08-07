@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "learning-mode",
-      "description": "Teach the stack while building it: what & why up front, concept notes inline, a walkthrough and a real quiz after, results logged to LEARNING.md.",
+      "description": "Teach the stack while building it: an interactive page before and after, concept notes inline, a real quiz, results logged to LEARNING.md.",
       "source": "./",
       "category": "productivity"
     }

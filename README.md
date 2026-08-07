@@ -5,7 +5,8 @@ come out the other side able to explain what you shipped.
 
 It makes Claude do four things around every non-trivial change:
 
-- say what it's about to build and why, **before** it builds it
+- build you an interactive page **before** it writes any code, showing what it's about to build
+  and why — then republish that same page afterwards with what actually shipped
 - explain each unfamiliar concept the first time it shows up, using analogies from the stack
   you already know
 - walk through the finished work, then quiz you on it
@@ -74,6 +75,25 @@ triggers as reliably as the hook:
 Active for every non-trivial change: follow the `learning-mode` skill.
 Profile and log: `LEARNING.md`.
 ```
+
+## The session page
+
+One page per session, published before the code and republished after, so you end up with a
+single link that covers what was planned, what shipped, and where those two came apart.
+
+Two rules keep it from being a diagram with a play button on it. **Animate the mechanism, not
+the architecture** — boxes and arrows over your modules is a static picture with movement bolted
+on, so what gets animated is the one step whose failure mode is invisible standing still, like a
+write staged and then discarded on rollback. And **the control has to change the answer**: a
+toggle over the single input that flips the outcome, defaulted to whichever setting your
+intuition would pick, so the surprise arrives before you go looking for it. A control that lands
+in the same place either way gets cut.
+
+Sessions with no mechanism to show — a rename sweep, a config move — get told so in one line and
+stay in prose.
+
+Without an artifact tool, the same self-contained HTML is written next to `LEARNING.md` under
+`.learning/` and you get the path.
 
 ## Notes
 

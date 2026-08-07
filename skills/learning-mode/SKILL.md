@@ -2,7 +2,7 @@
 name: learning-mode
 description: Use when someone is deliberately learning an unfamiliar stack while building — the goal is understanding, not just shipping. Triggers on a LEARNING.md log in the project, a CLAUDE.md/AGENTS.md declaring learning mode, or a user who says they are new to the stack and wants to be taught as the work happens.
 license: MIT
-compatibility: Any agent. The quiz uses Claude Code's AskUserQuestion when available and falls back to numbered prose.
+compatibility: Any agent. The quiz uses Claude Code's AskUserQuestion when available and falls back to numbered prose; the session page uses an artifact tool when available and falls back to an HTML file on disk.
 ---
 
 # Learning mode
@@ -25,11 +25,47 @@ learn — then write the template below and continue.
 
 ## Teach in three beats
 
-1. **Before implementing** — 2–5 sentences: what you are about to build, and *why this
-   approach*.
+1. **Before implementing** — the page's primer half: what you are about to build, *why this
+   approach*, and the one mechanism worth watching. In chat, a couple of sentences pointing at
+   it — not a second copy of it.
 2. **While implementing** — when a concept from the learning stack first appears, add a brief
    note. First occurrence only.
-3. **After implementing** — walk through what was built and how the pieces connect. Then quiz.
+3. **After implementing** — republish the page with what actually got built, how the pieces
+   connect, and where the plan turned out wrong. Then quiz.
+
+## The page
+
+Beats 1 and 3 are one interactive page, not prose. Same file, published twice: the primer before
+you build, the same file edited and republished after — one link per session that ends complete.
+
+**Skip it when nothing moves.** A rename sweep, a config move, a doc edit has no mechanism to
+animate; say so in one line and stay in prose. Motion manufactured for a static change is
+decoration, and decoration is what gets remembered instead of the thing.
+
+**Animate the mechanism, not the architecture.** Boxes and arrows over your modules is a static
+picture with movement bolted on. What earns an animation is a step with states over time whose
+failure mode is invisible standing still — an envelope staged and then discarded on abort, or an
+index monitor walking documents and silently skipping one. Pick the single step the learner's
+intuition gets wrong, and animate that.
+
+**The control is the variable that changes the answer.** Not play/pause. A toggle, slider or
+scenario picker over the one input whose value flips the outcome — the field's stored type, or
+which side of the commit the exception gets thrown. Flipping it has to visibly change the end
+state. If both settings land in the same place the control teaches nothing: cut it, or you have
+built a video with a button on it.
+
+**Start it on the wrong setting.** Default the control where the learner's intuition would put
+it, so the surprise is the first thing they see rather than something they go looking for. The
+page teaches by falsifying a guess, not by narrating a result.
+
+**Name real code.** Every step cites the file and symbol it belongs to (`Content.cs:95`,
+`RecordContentCommand`). A page that could describe any project describes none.
+
+Build it with inline CSS animation and a handful of event handlers. It has to be self-contained
+— no CDN, no external font, no remote image — and has to read in both light and dark. If your
+harness offers an `artifact-design` skill, load it before writing the page. No artifact tool at
+all? Write the same self-contained HTML beside `LEARNING.md` as `.learning/<date>-<slug>.html`
+and hand over the path.
 
 ## Quiz
 
@@ -80,8 +116,8 @@ Trivial changes — typos, renames, one-line fixes — get no quiz.
 
 ## Log it
 
-Append to `LEARNING.md` after each quiz: date, what was built, concepts covered, result per
-question, weak spots.
+Append to `LEARNING.md` after each session: date, what was built, the page's link or path,
+concepts covered, result per question, weak spots. A session with no quiz still gets an entry.
 
 Results: ✅ correct · ⚠️ answered via "Other" and only partly right, or correct-but-guessed
 (they said so) · ❌ wrong. **On a ❌, log which distractor was picked** — that is the actual
@@ -109,5 +145,5 @@ Stack being learned: <...>. (Known already: <...>.)
 <!-- ⚠️/❌ results, plus concepts never self-answered -->
 
 ## Sessions
-<!-- newest first: date · what was built · concepts · quiz results -->
+<!-- newest first: date · what was built · page · concepts · quiz results -->
 ```
