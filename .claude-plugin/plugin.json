@@ -1,6 +1,6 @@
 {
   "name": "learning-mode",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Teach the stack while building it: an interactive page before and after, concept notes inline, a real quiz, results logged to LEARNING.md.",
   "author": {
     "name": "Lander Parren",

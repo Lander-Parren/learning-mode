@@ -38,9 +38,10 @@ Claude Code, as a plugin (this also installs the session hook):
 
 ## Setup
 
-Nothing to configure. On the first non-trivial change Claude will ask what you already know
-and what you're learning, then write a `LEARNING.md` at your project root. That file is the
-config from then on — its header holds your profile, and the rest is your log.
+Nothing to configure. On the first non-trivial change Claude will ask what you already know,
+what you're learning, and which language you want the output in, then write a `LEARNING.md` at
+your project root. That file is the config from then on: its header holds your profile, and the
+rest is your log.
 
 If you'd rather seed it yourself:
 
@@ -48,6 +49,7 @@ If you'd rather seed it yourself:
 # Learning log — my-project
 
 Stack being learned: Rust, tokio, sqlx. (Known already: Python, Django.)
+Language: Dutch (jargon in English).
 
 ## Concepts mastered
 <!-- promoted here once answered correctly twice -->
@@ -75,6 +77,23 @@ triggers as reliably as the hook:
 Active for every non-trivial change: follow the `learning-mode` skill.
 Profile and log: `LEARNING.md`.
 ```
+
+## How much it writes, and in what language
+
+Explanations are capped by count, not by adjective, because "keep it brief" produces walls of
+text. Before the code you get three lines and a link. A concept note is two lines, the first time
+that concept shows up. The walkthrough afterwards is five bullets at most, fifteen words each,
+each opening with the term in bold so you can scan the line without reading it. Anything longer
+than that belongs on the page, or in the collapsed `<details>` block of the log entry.
+
+Set `Language:` in the header and prose follows it. Jargon doesn't: technical terms, product
+names, identifiers, file paths and error text stay in their original English, so a Dutch
+walkthrough still says *outbox* and *transaction* rather than inventing translations nobody says
+out loud. The `LEARNING.md` headings and field labels stay English too, since tools parse them.
+
+Log entries are two layers. A scannable top (`Built:`, `Concepts:` as short labels, up to five
+core bullets) with the long version collapsed underneath, so nothing is lost and nothing is in
+your way.
 
 ## The session page
 
